@@ -52,11 +52,13 @@ Unlike doctors, who take upon them the Hippocratic Oath, statisticians do not fo
 ## Analyzing National Language Test Scores as a Research Assistant
 
 ### Exhibit A: Some Jargon of the National Language Tests
-* **OPI:** Oral Proficiency Interview
-* **TOCFL:** Test of Chinese as a Foreign Language
-* **TOPIK:** Test of Proficiency in Korean
-* **JCAT:** Japanese Computerized Adaptive Test
-* **JLPT:** Japanese-Language Proficiency Test
+| Acronym | Test Name | Score Type (Numeric or Categorical) |
+| :--- | :--- | :--- |
+| **OPI** | Oral Proficiency Interview | **Categorical** (Proficiency ratings such as Novice, Intermediate, Advanced, Superior) |
+| **TOCFL** | Test of Chinese as a Foreign Language | **Both** (Numeric scaled scores and Categorical bands/levels 1-6) |
+| **TOPIK** | Test of Proficiency in Korean | **Both** (Numeric total scores and Categorical levels 1-6) |
+| **JCAT** | Japanese Computerized Adaptive Test | **Numeric** (Total score from 0 to 400) |
+| **JLPT** | Japanese-Language Proficiency Test | **Both** (Numeric scaled scores and Categorical levels N5-N1) |
 
 While analyzing national language test scores, I was given a survey containing around hundreds of student responses on their background as language learners. Generally, this was collected using short responses. Everything from student names to their courses was entered manually in free response. While the open environment was helpful for students to freely write about their background and provide context for the answers they provided, it also provided a challenge for data analytics. 
 
