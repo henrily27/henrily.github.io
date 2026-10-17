@@ -1,1 +1,93 @@
+# Introduction: Purpose of the Blog Post and Exigence for the Student
 
+Congratulations! You've landed your first internship or job working with data analysis! As a fellow student and aspiring data scientist, here are some principles, practices, and tools I've found helpful in my collaboration with professionals in other fields.
+
+## Working With Other Fields: Personal Principles of Communication
+
+### Principles of Basic Communication
+1. **Curiosity > conclusiveness**
+2. **Communicate frequently and extensively**
+3. **Foster mutual understanding**
+
+To be **curious** is better than to be conclusive. Curiosity allows for dialogue and sharing of information, which promotes trust and openness.
+
+**Frequent and extensive communication** can improve workflow, streamline decision-making, and reduce points of friction. In separate work as a freelance graphic designer, I encountered this frequently with the 'completion' of a product only to recognize that I had failed to involve the client throughout the process. Communication throughout a project decreases the likelihood of drastic revisions later down the road.
+
+**Fostering mutual understanding** can come in many forms. It often looks different as a project moves through different phases. This may look like sharing of jargon, establishing ways to keep contact, setting expectations for turnaround and response times, or a multitude of other helpful practices. The core philosophy at work is a preference for effort over the assumption of connection.
+
+## A Peculiar Place: Cross-Discipline Interactions
+
+Statistics are a powerful form of evidence, crucial to a multitude of fields, which include: politics, sports, engineering, aeronautics, the pharmaceutical industry, and the wider scope of healthcare. 
+
+Rhetors in all ages have used statistics to support all sorts of causes. The newspaper industry often uses statistics directly following bold headlines to qualify those bold headlines. Consider the following: 
+
+* **The hidden divide that makes life less affordable for some Americans** 
+  *New data shows that record-high monthly payments for car loans and student loans are adding huge costs to some budgets.* (*The Washington Post*)
+* **U.S. Budget Deficit Nears $2 Trillion, a Reality Check for Trump's Cost Cutting** 
+  *Higher interest rates are inflating borrowing costs as the Trump administration spends on the Iran war and tariff refunds.* (*The New York Times*)
+* **Egg prices have quadrupled, chicken has doubled: the cost of US inflation in 10 items** 
+  *Egg prices are up 310% since 2005. But it’s not the only staple with soaring prices.* (*The Guardian*)
+
+Salesmen and saleswomen may use statistics to inspire potential buyers. Consider the following common phrases:
+* *"Join 3 million other subscribers!"*
+* *"Recommended by 9 out of 10 dentists!"*
+* *"Kills 99.9% of bacteria!"*
+
+In small and big ways, statistics can be used to powerful effect. Mark Twain remarked on this when he wrote in his autobiography, *"There are three kinds of lies: lies, damned lies, and statistics."*
+
+Equipped with a plethora of models and algorithms, you have the ability to heavily influence perceptions surrounding any topic. As Uncle Ben said to Peter Parker: *"With great power comes great responsibility."* 
+
+Unlike doctors, who take upon them the Hippocratic Oath, statisticians do not formally uphold any commitment. With that in mind, I invite you to commit yourself to a pursuit of truth.
+
+## Tools
+
+* **Collaboration tools:** These tools allow you to share images, PDFs, and other documents with your fellow professionals. Many professionals within the STEM fields are familiar with GitHub, but outside of GitHub, many more are familiar with Google Drive.
+  * *Examples:* GitHub, Google Drive, Box, Dropbox
+* **Visualization tools:** A picture is worth a thousand words, the saying often goes. I might say: a good graphic is worth a lot of data points. Charts, pictures, and graphs are a powerful way to display findings and communicate conclusions. Outside of the field of statisticians, many are familiar with bar charts, histograms, and density maps.
+  * *Examples:* Quarto, Jupyter Notebook
+* **Data cleaning tools:** These are the unsung heroes of data analytics. Almost all data that you will work with will require some level of cleaning or pruning to be usable. 
+  * *R packages:* `tidyverse`, `stringr`, `lubridate`
+  * *Python packages:* `pandas`, `pyjanitor`, `TheFuzz`
+
+## Analyzing National Language Test Scores as a Research Assistant
+
+### Exhibit A: Some Jargon of the National Language Tests
+* **OPI:** Oral Proficiency Interview
+* **TOCFL:** Test of Chinese as a Foreign Language
+* **TOPIK:** Test of Proficiency in Korean
+* **JCAT:** Japanese Computerized Adaptive Test
+* **JLPT:** Japanese-Language Proficiency Test
+
+While analyzing national language test scores, I was given a survey containing around hundreds of student responses on their background as language learners. Generally, this was collected using short responses. Everything from student names to their courses was entered manually in free response. While the open environment was helpful for students to freely write about their background and provide context for the answers they provided, it also provided a challenge for data analytics. 
+
+One such question posed to the students was *"How long have you been learning this language?"* This was followed by a self-evaluation of their experience. Some students counted in the time they had been actively learning the language, if native speakers, from birth. Some students answered in years and others in months or weeks. Yet others used decimals and rudimentary mixed fractions and numbers to communicate their experience. 
+
+All of these responses needed to be cleaned to group the students by specific language learned (which was also self-entered!). Using string matching for specific phrases, I worked through the most frequent 'outliers', as we had determined to use a unit of months for the final dataset. When run in order, the sequential code blocks would first catch the responses with portions such as 'years', 'weeks', or 'months', and add a string which would resist further manipulation based on following `grepl` conditions.
+
+All of this follows rudimentary statistical procedures. Take a look at your data, make a plan to clean it, implement the plan, save periodically and frequently, and preserve the initial dataset to avoid overwriting important information. 
+
+Beyond the codeblocks, there was *also* frequent communication with Dr. Moody. When I came to blocks such as conflicting responses from the same student or questions about hyperparameters for Bayesian models, I turned to the in-field experts. I could make guesses based on the test score data I had received, but I also trusted and knew I could pull on the expertise of the professors within their respective language departments. Each professor that was a part of this project had years of teaching experience and a familiarity with student performance on these tests that I simply did not have, one that was specific to the language learners at Brigham Young University.
+
+## Conclusion
+
+In this experience, I have learned that applying these general principles of good communication and these specific guidelines for cross-discipline collaboration is worth it.
+
+So as you start your new position as an intern or data scientist, try applying the following!
+
+1. **Curiosity > conclusiveness.**
+2. **Communicate frequently and extensively.**
+3. **Foster mutual understanding.**
+4. **Pursue truth!**
+
+Good luck!
+---
+
+### Sources
+
+Chalabi, M. (2025, March 22). Egg prices have quadrupled, chicken has doubled: The cost of US inflation in 10 items. *The Guardian*. 
+
+Rappeport, A. (2026, October 16). U.S. budget deficit nears $2 trillion, a reality check for Trump's cost cutting. *The New York Times*.
+
+Twain, M. (1906, September 7). Chapters from my autobiography. *North American Review*. Project Gutenberg.
+
+Weil, J. Z. (2026, October 15). The hidden divide that makes life less affordable for some Americans. *The Washington Post*.
