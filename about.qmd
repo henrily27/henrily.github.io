@@ -1,0 +1,4 @@
+# About Me
+My name is Henri Ly and I'm a statistics undergraduate student and aspiring data scientist! Check out the internship guide!
+
+Go to 'docs/internship_guide.qmd' at the top of the page HAHA!
