@@ -52,6 +52,7 @@ Unlike doctors, who take upon them the Hippocratic Oath, statisticians do not fo
 ## Analyzing National Language Test Scores as a Research Assistant
 
 ### Exhibit A: Some Jargon of the National Language Tests
+
 | Acronym | Test Name | Score Type (Numeric or Categorical) |
 | :--- | :--- | :--- |
 | **OPI** | Oral Proficiency Interview | **Categorical** (Proficiency ratings such as Novice, Intermediate, Advanced, Superior) |

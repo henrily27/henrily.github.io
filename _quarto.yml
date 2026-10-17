@@ -8,9 +8,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - projects.qmd
-      - internship_guide.qmd
-      - about.qmd
+      - href: projects.qmd
+        text: Projects
+      - href: internship_guide.qmd
+        text: Internship Guide
+      - href: about.qmd
+        text: About Me
 
 format:
   html:
