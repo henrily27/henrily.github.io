@@ -179,16 +179,33 @@
       vertical-align: top;
     }
     table.model-table {
-      min-width: 940px;
+      min-width: 0;
+      width: 100%;
+      table-layout: fixed;
     }
-    table.model-table th:nth-child(1), table.model-table td:nth-child(1) { width: 15%; }
-    table.model-table th:nth-child(2), table.model-table td:nth-child(2) { width: 14%; }
-    table.model-table th:nth-child(3), table.model-table td:nth-child(3) { width: 13%; }
-    table.model-table th:nth-child(4), table.model-table td:nth-child(4) { width: 11%; }
-    table.model-table th:nth-child(5), table.model-table td:nth-child(5) { width: 13%; }
-    table.model-table th:nth-child(6), table.model-table td:nth-child(6) { width: 34%; }
-    table.model-table td:nth-child(2), table.model-table td:nth-child(3),
-    table.model-table td:nth-child(4), table.model-table td:nth-child(5) {
+    table.model-table th:nth-child(1), table.model-table td:nth-child(1) { width: 17%; }
+    table.model-table th:nth-child(2), table.model-table td:nth-child(2) { width: 31%; }
+    table.model-table th:nth-child(3), table.model-table td:nth-child(3) { width: 52%; }
+    table.model-table th, table.model-table td {
+      padding: 0.55rem 0.6rem;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+    table.model-table .table-statistics {
+      line-height: 1.5;
+    }
+    table.model-table .table-statistics small {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    @media (max-width: 640px) {
+      table.model-table {
+        min-width: 620px;
+      }
+    }
+    .math-inline {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
       white-space: nowrap;
     }
     figure {
@@ -514,21 +531,18 @@ my_subset$sex &lt;- my_subset$sex - 1</code></pre>
         <thead>
           <tr>
             <th>Predictor</th>
-            <th>Estimate (log income)</th>
-            <th>Std. Error</th>
-            <th>t value</th>
-            <th>p-value</th>
-            <th>Conditional Association (Holding Other Model Variables Constant)</th>
+            <th>Estimate and Test Statistics</th>
+            <th>Conditional Association</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><code>(Intercept)</code></td><td>8.4781</td><td>0.3694</td><td>22.948</td><td>&lt; 2e-16 ***</td><td>Baseline log-income reference when all predictors equal 0</td></tr>
-          <tr><td><code>height</code> (in)</td><td>+0.0102</td><td>0.0052</td><td>1.987</td><td>0.0470 *</td><td>Conditionally associated with ~+1.03% higher pay per inch of height</td></tr>
-          <tr><td><code>looks</code> (1&ndash;10)</td><td>+0.0423</td><td>0.0077</td><td>5.486</td><td>4.46e-08 ***</td><td>Conditionally associated with ~+4.32% higher pay per +1 attractiveness unit</td></tr>
-          <tr><td><code>iq</code> (points)</td><td>+0.0121</td><td>0.0009</td><td>13.274</td><td>&lt; 2e-16 ***</td><td>Conditionally associated with ~+1.22% higher pay per IQ point (+15 pts &approx; +20.0%)</td></tr>
-          <tr><td><code>bmi</code> (SD from 22, ~2.54 kg/m<sup>2</sup>)</td><td>+0.0121</td><td>0.0164</td><td>0.737</td><td>0.4610</td><td>No statistically significant linear conditional association</td></tr>
-          <tr><td><code>waist</code> (in)</td><td>-0.0017</td><td>0.0025</td><td>-0.682</td><td>0.4950</td><td>No statistically significant linear conditional association</td></tr>
-          <tr><td><code>sex</code> (0=M, 1=F)</td><td>-0.8366</td><td>0.0401</td><td>-20.874</td><td>&lt; 2e-16 ***</td><td>Women earn ~56.7% less conditionally than men in this 1993 cohort wave</td></tr>
+          <tr><td><code>(Intercept)</code></td><td class="table-statistics"><strong>Estimate:</strong> 8.4781<br><small>SE: 0.3694 &middot; t: 22.948 &middot; p &lt; 2e-16 ***</small></td><td>Baseline log-income reference when all predictors equal 0</td></tr>
+          <tr><td><code>height</code> (in)</td><td class="table-statistics"><strong>Estimate:</strong> +0.0102<br><small>SE: 0.0052 &middot; t: 1.987 &middot; p: 0.0470 *</small></td><td>Conditionally associated with ~+1.03% higher pay per inch of height</td></tr>
+          <tr><td><code>looks</code> (1&ndash;10)</td><td class="table-statistics"><strong>Estimate:</strong> +0.0423<br><small>SE: 0.0077 &middot; t: 5.486 &middot; p: 4.46e-08 ***</small></td><td>Conditionally associated with ~+4.32% higher pay per +1 attractiveness unit</td></tr>
+          <tr><td><code>iq</code> (points)</td><td class="table-statistics"><strong>Estimate:</strong> +0.0121<br><small>SE: 0.0009 &middot; t: 13.274 &middot; p &lt; 2e-16 ***</small></td><td>Conditionally associated with ~+1.22% higher pay per IQ point (+15 pts &approx; +20.0%)</td></tr>
+          <tr><td><code>bmi</code> (SD from 22, ~2.54 kg/m<sup>2</sup>)</td><td class="table-statistics"><strong>Estimate:</strong> +0.0121<br><small>SE: 0.0164 &middot; t: 0.737 &middot; p: 0.4610</small></td><td>No statistically significant linear conditional association</td></tr>
+          <tr><td><code>waist</code> (in)</td><td class="table-statistics"><strong>Estimate:</strong> -0.0017<br><small>SE: 0.0025 &middot; t: -0.682 &middot; p: 0.4950</small></td><td>No statistically significant linear conditional association</td></tr>
+          <tr><td><code>sex</code> (0=M, 1=F)</td><td class="table-statistics"><strong>Estimate:</strong> -0.8366<br><small>SE: 0.0401 &middot; t: -20.874 &middot; p &lt; 2e-16 ***</small></td><td>Women earn ~56.7% less conditionally than men in this 1993 cohort wave</td></tr>
         </tbody>
       </table>
     </div>
@@ -581,7 +595,7 @@ my_subset$sex &lt;- my_subset$sex - 1</code></pre>
       The interactive calculator below is a cohort-specific model illustration based on the 1957 Wisconsin high school cohort surveyed in 1993 at roughly 54 years of age. All dollar outputs apply a 4.1423 (414.23%) inflation factor to convert 1993 USD purchasing power into 2026 USD purchasing power. Honestly it's just put in here for fun, and predicts your salary based on the coefficients garnered, at the age of 54.
     </p>
     <div class="callout caution">
-      Distinguishing <code>exp(predicted log income)</code> from Mean Expected Dollar Income: Because the OLS model is fit on <code>log(income)</code>, simply exponentiating the linear predictor—<code>exp(x&prime;&beta;&#770;)</code>—estimates the conditional median / geometric mean dollar income, <em>not</em> the conditional mean (expected) dollar income <code>E[income | X]</code>. Estimating a conditional mean on the raw dollar scale requires a retransformation correction. Those metrics are reported below to communicate model uncertainty.
+      Distinguishing <code>exp(predicted log income)</code> from Mean Expected Dollar Income: Because the OLS model is fit on <code>log(income)</code>, simply exponentiating the linear predictor—<span class="math-inline" aria-label="exp of x-prime beta-hat">exp(x′β̂)</span>—estimates the conditional median / geometric mean dollar income, <em>not</em> the conditional mean (expected) dollar income <span class="math-inline">E[income | X]</span>. Estimating a conditional mean on the raw dollar scale requires a retransformation correction. Those metrics are reported below to communicate model uncertainty.
     </div>
 
     <section class="predictor-card" aria-label="Cohort-Specific Model Illustration">
@@ -632,7 +646,7 @@ my_subset$sex &lt;- my_subset$sex - 1</code></pre>
           </div>
           <div class="salary-number" id="pred-salary">$163,629</div>
           <div class="sub-metric" id="pred-mean-salary">
-            Retransformation-Corrected Mean Est. (<code>&times; exp(&sigma;&#770;&sup2;/2) &approx; 1.287</code>): $210,583
+            Retransformation-Corrected Mean Est. (<span class="math-inline">&times; exp(σ̂²/2) &approx; 1.287</span>): $210,583
           </div>
         </div>
         <div style="font-size: 0.83rem; color: #e2e8f0;" id="pred-breakdown">
@@ -662,7 +676,7 @@ my_subset$sex &lt;- my_subset$sex - 1</code></pre>
         Omitted Variables &amp; Non-Causal Conditional Associations: The baseline specification omits critical human-capital and labor-supply variables—most notably educational attainment, occupation, industry, annual hours worked, and full-time vs. part-time status. Consequently, the large negative coefficient on <code>sex</code> (-0.8366 log-points) and the positive coefficients on <code>looks</code> and <code>iq</code> reflect unadjusted differences in hours worked and occupational sorting as well as direct wage differences. While the regression table supports the reported conditional associations, low VIFs (&lt; 2.5) address collinearity among the six included predictors only; they do not establish causality or validate all regression assumptions.
       </li>
       <li>
-        Retransformation Bias &amp; Wide Individual Prediction Uncertainty: In a log-linear model, <code>exp(x&prime;&beta;&#770;)</code> estimates the conditional median/geometric mean rather than the conditional arithmetic mean expected dollar income, which requires a retransformation adjustment. Moreover, with R<sup>2</sup> = 0.3155 (&sigma;&#770; &approx; 0.71), nearly 68.5% of the variance in logged 1993 earnings remains unexplained, resulting in a 95% individual prediction interval that spans roughly fourfold below to fourfold above the point estimate.
+        Retransformation Bias &amp; Wide Individual Prediction Uncertainty: In a log-linear model, <span class="math-inline" aria-label="exp of x-prime beta-hat">exp(x′β̂)</span> estimates the conditional median/geometric mean rather than the conditional arithmetic mean expected dollar income, which requires a retransformation adjustment. Moreover, with R<sup>2</sup> = 0.3155 (&sigma;&#770; &approx; 0.71), nearly 68.5% of the variance in logged 1993 earnings remains unexplained, resulting in a 95% individual prediction interval that spans roughly fourfold below to fourfold above the point estimate.
       </li>
       <li>
         Historical Cohort Specificity &amp; Proxy Measurement Error: The model is calibrated on 1957 Wisconsin high school graduates observed in 1993 at approximately age 54. Labor market returns, gender norms, and demographic diversity in the modern U.S. economy differ markedly from mid-century Wisconsin. Additionally, <code>looks</code> is based on a single 1957 high school yearbook photograph (rated at an unknown date) and <code>bmi</code>/<code>waist</code> are self-reported in 1993, introducing measurement error and temporal mismatch.
@@ -928,7 +942,7 @@ my_subset$sex &lt;- my_subset$sex - 1</code></pre>
 
         outSal.textContent = formatUSD(predGeom);
         outMean.innerHTML =
-          'Retransformation-Corrected Conditional Mean (<code>&times; exp(&sigma;&#770;&sup2;/2) &approx; 1.287</code>): ' + formatUSD(predMean) + '';
+          'Retransformation-Corrected Conditional Mean (<span class="math-inline">&times; exp(σ̂²/2) &approx; 1.287</span>): ' + formatUSD(predMean) + '';
 
         outBrk.innerHTML =
           '1993 unadjusted <code>exp(log pred)</code>: ' + formatUSD(rawGeom) + ' (log: ' + logPred.toFixed(3) + ') &times; 4.1423 (1993 &rarr; 2026 USD)<br/>' +
