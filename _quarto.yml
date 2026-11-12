@@ -20,7 +20,7 @@ website:
         text: Internship Guide
       - href: about.qmd
         text: About Me
-      - href: price_of_a_pretty_face.html
+      - href: price_of_a_pretty_face.qmd
         text: Data Acquisition and Analysis Blog
 
 format:
