@@ -142,18 +142,23 @@
       padding: 0;
     }
     .table-wrapper {
+      max-width: 100%;
       overflow-x: auto;
       margin: 1.25rem 0;
+      -webkit-overflow-scrolling: touch;
     }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.9rem;
+      table-layout: fixed;
     }
     th, td {
       padding: 0.6rem 0.8rem;
       border-bottom: 1px solid var(--border);
       text-align: right;
+      vertical-align: top;
+      overflow-wrap: anywhere;
     }
     th:first-child, td:first-child {
       text-align: left;
@@ -166,9 +171,25 @@
       color: #0f172a;
       font-weight: 600;
     }
+    table.var-table {
+      min-width: 760px;
+    }
     table.var-table th, table.var-table td {
       text-align: left;
       vertical-align: top;
+    }
+    table.model-table {
+      min-width: 940px;
+    }
+    table.model-table th:nth-child(1), table.model-table td:nth-child(1) { width: 15%; }
+    table.model-table th:nth-child(2), table.model-table td:nth-child(2) { width: 14%; }
+    table.model-table th:nth-child(3), table.model-table td:nth-child(3) { width: 13%; }
+    table.model-table th:nth-child(4), table.model-table td:nth-child(4) { width: 11%; }
+    table.model-table th:nth-child(5), table.model-table td:nth-child(5) { width: 13%; }
+    table.model-table th:nth-child(6), table.model-table td:nth-child(6) { width: 34%; }
+    table.model-table td:nth-child(2), table.model-table td:nth-child(3),
+    table.model-table td:nth-child(4), table.model-table td:nth-child(5) {
+      white-space: nowrap;
     }
     figure {
       margin: 1.6rem 0;
@@ -489,11 +510,11 @@ my_subset$sex &lt;- my_subset$sex - 1</code></pre>
     </p>
 
     <div class="table-wrapper">
-      <table>
+      <table class="model-table">
         <thead>
           <tr>
             <th>Predictor</th>
-            <th>Estimate (log $)</th>
+            <th>Estimate (log income)</th>
             <th>Std. Error</th>
             <th>t value</th>
             <th>p-value</th>
