@@ -1,12 +1,13 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - price_of_a_pretty_face_2.html
   render:
     - index.qmd
     - projects.qmd
     - internship_guide.qmd
     - about.qmd
-    - price_of_a_pretty_face.qmd
 
 website:
   title: "Henri Ly"
@@ -20,7 +21,7 @@ website:
         text: Internship Guide
       - href: about.qmd
         text: About Me
-      - href: price_of_a_pretty_face.qmd
+      - href: price_of_a_pretty_face_2.html
         text: Data Acquisition and Analysis Blog
 
 format:
