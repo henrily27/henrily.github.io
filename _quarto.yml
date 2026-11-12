@@ -6,6 +6,7 @@ project:
     - projects.qmd
     - internship_guide.qmd
     - about.qmd
+    - price_of_a_pretty_face.qmd
 
 website:
   title: "Henri Ly"
